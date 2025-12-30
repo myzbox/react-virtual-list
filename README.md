@@ -31,51 +31,57 @@ yarn add @myzbox/react-virtual-list
 ## 🚀 Basic Usage
 
 ```jsx
+import React from "react";
 import { useVirtualList } from "@myzbox/react-virtual-list";
 
-const data = Array.from({ length: 10000 }, (_, i) => i);
+export default function TestVirtualList() {
+  const data = Array.from({ length: 10000 }, (_, i) => `Item ${i + 1}`);
 
-function VirtualList() {
   const { containerRef, virtualItems, totalHeight } = useVirtualList({
     count: data.length,
-    itemHeight: 32,
+    itemHeight: 40,
     overscan: 8,
   });
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        height: "90vh",
-        overflow: "auto",
-        position: "relative",
-      }}
-    >
-      <div style={{ height: totalHeight, position: "relative" }}>
-        {virtualItems.map((item) => (
-          <div
-            key={item.index}
-            style={{
-              position: "absolute",
-              transform: `translateY(${item.start}px)`,
-              height: item.size,
-              width: "100%",
-              borderBottom: "1px solid #eee",
-              boxSizing: "border-box",
-              padding: "0 12px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            Item {data[item.index]}
-          </div>
-        ))}
+    <div style={{ padding: "20px" }}>
+      <h2>Virtual List Test</h2>
+
+      <div
+        ref={containerRef}
+        style={{
+          height: "80vh",
+          overflow: "auto",
+          border: "1px solid #ccc",
+          position: "relative",
+        }}
+      >
+        <div style={{ height: totalHeight, position: "relative" }}>
+          {virtualItems.map((item) => (
+            <div
+              key={item.index}
+              style={{
+                position: "absolute",
+                transform: `translateY(${item.start}px)`,
+                height: item.size,
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                padding: "0 16px",
+                boxSizing: "border-box",
+                borderBottom: "1px solid #eee",
+                color: "#4B5563",
+                background: item.index % 2 === 0 ? "#fafafa" : "#fff",
+              }}
+            >
+              {data[item.index]}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
-
-export default VirtualList;
 ```
 
 ## 🧩 API Reference
