@@ -1,0 +1,45 @@
+{
+  "name": "@myzbox/react-virtual-list",
+  "version": "1.0.0",
+  "description": "A lightweight, smooth, headless React hook for fixed-height list virtualization, built for performance and large datasets.",
+  "author": "myzbox",
+  "license": "MIT",
+
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+
+  "files": [
+    "dist"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myzbox/react-virtual-list"
+  },
+
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "npm run build"
+  },
+
+  "peerDependencies": {
+    "react": ">=18"
+  },
+
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "tsup": "^8.0.0"
+  },
+
+  "keywords": [
+    "react",
+    "virtual-list",
+    "virtualization",
+    "virtual-scroll",
+    "react-hook",
+    "performance",
+    "large-lists",
+    "smooth-scroll"
+  ]
+}
