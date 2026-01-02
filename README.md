@@ -1,5 +1,12 @@
 # @myzbox/react-virtual-list
 
+![npm](https://img.shields.io/npm/v/@myzbox/react-virtual-list)
+![npm downloads](https://img.shields.io/npm/dw/@myzbox/react-virtual-list)
+![license](https://img.shields.io/npm/l/@myzbox/react-virtual-list)
+![types](https://img.shields.io/badge/types-TypeScript-blue)
+![react](https://img.shields.io/badge/react-%3E%3D18-blue)
+![GitHub stars](https://img.shields.io/github/stars/myzbox/react-virtual-list?style=social)
+
 A lightweight, smooth, headless React hook for fixed-height list virtualization, built for performance and large datasets.
 
 > Render 10,000+ items smoothly without killing the DOM.
